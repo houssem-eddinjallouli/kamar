@@ -1,7 +1,7 @@
 import qrcode
 
 # Google Maps link for Megara Carthage
-url = "https://houssem-portfolio-eight.vercel.app/h"
+url = "https://kamar-rosy.vercel.app"
 
 # Create the QR code
 qr = qrcode.QRCode(
@@ -16,6 +16,6 @@ qr.make(fit=True)
 
 # Generate and save the image
 img = qr.make_image(fill_color="black", back_color="white")
-img.save("portfolio.png")
+img.save("Meue.png")
 
-print("✅ QR code generated successfully: portfolio.png")
+print("✅ QR code generated successfully: Meue.png")

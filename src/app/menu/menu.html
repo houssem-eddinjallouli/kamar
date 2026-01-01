@@ -1,0 +1,53 @@
+<div class="menu-container">
+  <h1 class="restaurant-name">Kamar Taktak</h1>
+  <p class="subtitle">Menu du Restaurant</p>
+
+  <section class="menu-section">
+    <h2>🍕 Entrées</h2>
+    <div class="menu-item" *ngFor="let item of entrees">
+      <div class="item-header">
+        <span class="item-name">{{ item.name }}</span>
+        <span class="item-price">{{ item.price }} DT</span>
+      </div>
+      <p class="item-desc">{{ item.description }}</p>
+    </div>
+  </section>
+
+  <section class="menu-section">
+    <h2>🍝 Plats</h2>
+    <div class="menu-item" *ngFor="let item of plats">
+      <div class="item-header">
+        <span class="item-name">{{ item.name }}</span>
+        <span class="item-price">{{ item.price }} DT</span>
+      </div>
+      <p class="item-desc">{{ item.description }}</p>
+    </div>
+  </section>
+
+  <section class="menu-section">
+    <h2>🍰 Desserts</h2>
+    <div class="menu-item" *ngFor="let item of desserts">
+      <div class="item-header">
+        <span class="item-name">{{ item.name }}</span>
+        <span class="item-price">{{ item.price }} DT</span>
+      </div>
+      <p class="item-desc">{{ item.description }}</p>
+    </div>
+  </section>
+
+  <section class="menu-section">
+    <h2>🥤 Boissons</h2>
+    <div class="menu-item" *ngFor="let item of boissons">
+      <div class="item-header">
+        <span class="item-name">{{ item.name }}</span>
+        <span class="item-price">{{ item.price }} DT</span>
+      </div>
+      <p class="item-desc">{{ item.description }}</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>📱 Scannez le QR Code pour voir ce menu</p>
+    <p class="demo">Made with ♥️ by Kamar Taktak</p>
+  </footer>
+</div>

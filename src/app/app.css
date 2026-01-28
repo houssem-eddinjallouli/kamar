@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 64px;
+  height: 50px;
   background-color: #1e1e1e;
   display: flex;
   align-items: center;
@@ -33,4 +33,12 @@
 /* Optional: add top padding to body to prevent content hiding behind navbar */
 body, .main-content {
   padding-top: 64px; /* same as navbar height */
+}
+
+.footer {
+text-align: center;
+margin-top: -20px;
+font-size: 0.9rem;
+color: #555;
+background: #62a7c98b;
 }

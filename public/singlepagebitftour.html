@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="turn.min.js"></script>
+
+    <style type="text/css">
+      #magazine {
+        width: 90%;
+        height: 600px;
+        position: relative;
+        margin: 0 auto;
+      }
+
+      @media (min-width: 768px) {
+        #magazine {
+          width: 50%;
+          height: 700px;
+        }
+      }
+      #magazine .turn-page {
+        background-color: #ccc;
+        background-size: 100% 100%;
+      }
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        cursor: pointer;
+        user-select: none;
+        color: #000;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 1px;
+        border-radius: 50%;
+      }
+      .arrow.left {
+        left: 10px;
+      }
+      .arrow.right {
+        right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="magazine">
+      <div style="background-image: url(0a916622-1e1a-4ab1-903c-213cd7f6349f.jfif)"></div>
+      <div style="background-image: url(5c0adbbf-248e-468a-90f3-179b44c9ee2a.jfif)"></div>
+      <div style="background-image: url(ede1fbab-b1b4-4c59-8e05-305f32eb8d57.jfif)"></div>
+    </div>
+
+    <!-- Left and Right Arrows -->
+    <div class="arrow left" onclick="turnPage('previous')">&#10094;</div>
+    <div class="arrow right" onclick="turnPage('next')">&#10095;</div>
+
+    <script type="text/javascript">
+      $(window).ready(function () {
+        $("#magazine").turn({
+          display: "single",
+          acceleration: true,
+          gradients: !$.isTouch,
+          elevation: 50,
+          when: {
+            turned: function (e, page) {
+              /*console.log('Current view: ', $(this).turn('view'));*/
+            },
+          },
+        });
+      });
+
+      $(window).bind("keydown", function (e) {
+        if (e.keyCode == 37) $("#magazine").turn("previous");
+        else if (e.keyCode == 39) $("#magazine").turn("next");
+      });
+
+      // Function to turn pages
+      function turnPage(direction) {
+        $("#magazine").turn(direction);
+      }
+
+      // Swipe gestures for mobile devices
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      document.getElementById("magazine").addEventListener(
+        "touchstart",
+        function (event) {
+          touchStartX = event.changedTouches[0].screenX;
+        },
+        false
+      );
+
+      document.getElementById("magazine").addEventListener(
+        "touchend",
+        function (event) {
+          touchEndX = event.changedTouches[0].screenX;
+          handleSwipe();
+        },
+        false
+      );
+
+      function handleSwipe() {
+        if (touchEndX < touchStartX) {
+          $("#magazine").turn("next");
+        }
+        if (touchEndX > touchStartX) {
+          $("#magazine").turn("previous");
+        }
+      }
+    </script>
+  </body>
+</html>

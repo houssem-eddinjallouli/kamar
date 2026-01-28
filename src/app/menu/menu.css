@@ -1,75 +1,46 @@
-.menu-container {
-padding: 20px;
-font-family: 'Segoe UI', sans-serif;
-background: #fffaf5;
+.menu-page {
+  height: 100vh;
+  width: 100%;
+  background-image: url('/background.jpg'); /* put your image here */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.restaurant-name {
-text-align: center;
-font-size: 2.2rem;
-margin-bottom: 5px;
+.overlay {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
 }
 
-
-.subtitle {
-text-align: center;
-color: #777;
-margin-bottom: 30px;
+.title {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
 }
 
-
-.menu-section {
-margin-bottom: 30px;
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-
-.menu-section h2 {
-border-bottom: 2px solid #e0b973;
-padding-bottom: 5px;
-margin-bottom: 15px;
-color: #5a3e1b;
+button {
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #ffb703;
+  color: #000;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.2s;
 }
 
-
-.menu-item {
-margin-bottom: 15px;
-}
-
-
-.item-header {
-display: flex;
-justify-content: space-between;
-font-weight: 600;
-}
-
-
-.item-name {
-color: #333;
-}
-
-
-.item-price {
-color: #e0b973;
-}
-
-
-.item-desc {
-font-size: 0.9rem;
-color: #666;
-margin: 4px 0 0 0;
-}
-
-
-.footer {
-text-align: center;
-margin-top: 40px;
-font-size: 0.9rem;
-color: #555;
-}
-
-
-.demo {
-margin-top: 8px;
-font-style: italic;
+button:hover {
+  background: #ffd166;
+  transform: scale(1.05);
 }
